@@ -1,0 +1,306 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    /* Primary - Forest Green (Agricultural, Trust) */
+    --primary: 142 76% 22%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Warm Amber (Harvest, Action) */
+    --secondary: 32 95% 44%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Background & Surface */
+    --background: 40 33% 98%;
+    --foreground: 142 30% 15%;
+    
+    /* Cards */
+    --card: 0 0% 100%;
+    --card-foreground: 142 30% 15%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 142 30% 15%;
+    
+    /* Muted surfaces */
+    --muted: 40 20% 94%;
+    --muted-foreground: 142 15% 40%;
+    
+    /* Accent */
+    --accent: 142 60% 95%;
+    --accent-foreground: 142 76% 22%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Success - Best Mandi */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --success-soft: 142 60% 95%;
+    
+    /* Warning - Decent Mandi */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --warning-soft: 38 90% 95%;
+    
+    /* Danger - Not Recommended */
+    --danger: 0 72% 51%;
+    --danger-foreground: 0 0% 100%;
+    --danger-soft: 0 70% 96%;
+    
+    /* Borders & Inputs */
+    --border: 142 20% 85%;
+    --input: 142 20% 85%;
+    --ring: 142 76% 36%;
+    
+    --radius: 0.75rem;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(142, 76%, 22%) 0%, hsl(142, 60%, 30%) 50%, hsl(40, 60%, 45%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142, 76%, 36%) 0%, hsl(142, 70%, 42%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(40, 30%, 98%) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(142 20% 20% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(142 20% 20% / 0.08), 0 2px 4px -2px hsl(142 20% 20% / 0.05);
+    --shadow-lg: 0 10px 15px -3px hsl(142 20% 20% / 0.1), 0 4px 6px -4px hsl(142 20% 20% / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(142 20% 20% / 0.1), 0 8px 10px -6px hsl(142 20% 20% / 0.05);
+    --shadow-success: 0 10px 30px -10px hsl(142 76% 36% / 0.3);
+    --shadow-glow: 0 0 40px hsl(142 76% 36% / 0.15);
+    
+    /* Sidebar */
+    --sidebar-background: 142 30% 15%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 142 76% 36%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 142 40% 25%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 142 30% 25%;
+    --sidebar-ring: 142 76% 36%;
+  }
+
+  .dark {
+    --primary: 142 60% 50%;
+    --primary-foreground: 142 30% 10%;
+    
+    --secondary: 32 90% 55%;
+    --secondary-foreground: 32 90% 10%;
+    
+    --background: 142 30% 8%;
+    --foreground: 40 30% 95%;
+    
+    --card: 142 25% 12%;
+    --card-foreground: 40 30% 95%;
+    
+    --popover: 142 25% 12%;
+    --popover-foreground: 40 30% 95%;
+    
+    --muted: 142 20% 18%;
+    --muted-foreground: 40 20% 65%;
+    
+    --accent: 142 30% 20%;
+    --accent-foreground: 142 60% 70%;
+    
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+    --success-soft: 142 40% 15%;
+    
+    --warning: 38 85% 55%;
+    --warning-foreground: 38 90% 10%;
+    --warning-soft: 38 40% 15%;
+    
+    --danger: 0 65% 55%;
+    --danger-foreground: 0 0% 100%;
+    --danger-soft: 0 40% 15%;
+    
+    --border: 142 20% 25%;
+    --input: 142 20% 25%;
+    --ring: 142 60% 50%;
+    
+    --sidebar-background: 142 30% 6%;
+    --sidebar-foreground: 40 30% 95%;
+    --sidebar-primary: 142 60% 50%;
+    --sidebar-primary-foreground: 142 30% 10%;
+    --sidebar-accent: 142 25% 15%;
+    --sidebar-accent-foreground: 40 30% 95%;
+    --sidebar-border: 142 20% 20%;
+    --sidebar-ring: 142 60% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Noto Sans', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .container-app {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-card {
+    @apply bg-card rounded-xl border border-border shadow-md p-6;
+  }
+  
+  .badge-best {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-semibold;
+    background: hsl(var(--success));
+    color: hsl(var(--success-foreground));
+  }
+  
+  .badge-decent {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-semibold;
+    background: hsl(var(--warning));
+    color: hsl(var(--warning-foreground));
+  }
+  
+  .badge-avoid {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-semibold;
+    background: hsl(var(--danger));
+    color: hsl(var(--danger-foreground));
+  }
+  
+  .profit-highlight {
+    @apply text-4xl sm:text-5xl font-extrabold tracking-tight;
+    background: var(--gradient-success);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all;
+  }
+  
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold text-primary-foreground transition-all;
+    background: hsl(var(--primary));
+  }
+  
+  .btn-primary:hover {
+    background: hsl(142, 76%, 28%);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all;
+    background: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+  }
+  
+  .btn-secondary:hover {
+    background: hsl(32, 95%, 38%);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-bounce-gentle {
+    animation: bounceGentle 2s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceGentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Leaflet map overrides */
+.leaflet-container {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  border-radius: 0.75rem;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.distance-label {
+  background: hsl(var(--card));
+  border: 2px solid hsl(var(--success));
+  border-radius: 9999px;
+  padding: 4px 10px;
+  font-weight: 600;
+  font-size: 12px;
+  white-space: nowrap;
+  box-shadow: var(--shadow-md);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
